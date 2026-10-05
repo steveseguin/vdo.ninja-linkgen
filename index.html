@@ -60,6 +60,7 @@
 			document.getElementById("progress").style.width = "100%";
 			document.getElementById("progress").innerText = "Done!";
             document.getElementById("link").outerHTML= "";
+			return;
 
 		}
 
@@ -88,7 +89,7 @@
 				el.setAttribute("data-value", answer.params);
 				el.innerText = answer.label;
 				el.onclick = function () {
-					if (answer.params == "?push=") {
+					if (answer.params == "&push=") {
 						answer.params = answer.params + randomId;
 					}
 
