@@ -206,12 +206,12 @@
             {
                 "label": "random push id",
                 "type": "button",
-                "params": "push="
+                "params": "&push="
             },
             {
                 "label": "CustomPushID",
                 "type": "text",
-                "params": "push="
+                "params": "&push="
             }
         ]
     }
