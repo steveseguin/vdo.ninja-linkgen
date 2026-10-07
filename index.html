@@ -102,7 +102,7 @@
 				el.setAttribute("placeholder", answer.label);
 				el.onkeyup = function (e) {
 					if (e.keyCode == 13) {
-						finalUrl = finalUrl + answer.params + el.value;
+						finalUrl = finalUrl + answer.params + el.value.replace(/'/g, "%27");
 						document.getElementById("finalUrl").innerText = finalUrl;
 						document.getElementById("stepNumber").innerText = index + 2;
 						printStep(index + 1);
