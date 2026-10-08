@@ -102,7 +102,8 @@
 				el.setAttribute("placeholder", answer.label);
 				el.onkeyup = function (e) {
 					if (e.keyCode == 13) {
-						finalUrl = finalUrl + answer.params + el.value;
+						// Keep text from splitting the query or href; preserve existing %XX input.
+						finalUrl = finalUrl + answer.params + el.value.replace(/['&#?]/g, char => "%" + char.charCodeAt(0).toString(16));
 						document.getElementById("finalUrl").innerText = finalUrl;
 						document.getElementById("stepNumber").innerText = index + 2;
 						printStep(index + 1);
@@ -114,3 +115,4 @@
 		});
 	}
 </script>
+
